@@ -147,7 +147,9 @@ ol {
   background-position: top center;
 }
 .logo-co{
-  background-size: contain !important; 
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .spad {
@@ -2250,5 +2252,8 @@ ol {
         }
         .inner-card{
           padding-top: 100px;
+        }
+        .inner-card2{
+          padding-top: 40px;
         }
 

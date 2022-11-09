@@ -2,7 +2,6 @@
 <html lang="zxx">
 
 <head>
-
     <title>DRC ML</title>
 
     <!-- Google Font -->
@@ -20,12 +19,11 @@
     <link rel="stylesheet" href="../static/asset/css/style.css" type="text/css">
 </head>
 
-<body>
+<body class="model-css">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
@@ -40,15 +38,16 @@
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
                                 <li><a href="/">Home</a></li>
-                                <li><a href="/models">ML Models</a></li>
+                                <li class="active"><a href="/models">ML Models</a></li>
                                 <li><a href="http://drc-chat.herokuapp.com/">DRC Chats</a></li>
-                                <li class="active"><a href="/about">About</a></li>
+                                <li><a href="/about">About</a></li>
                                 
                             </ul>
                         </nav>
                         <div class="header__nav__social">
                             <a href="https://www.instagram.com/drc._.studio/"><i class="fa fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/channel/UCgE56VEv1HGUboWFp-Rta0A"><i class="fa fa-youtube-play"></i></a>
+                            <a href="https://www.youtube.com/channel/UCgE56VEv1HGUboWFp-Rta0A"><i
+                                    class="fa fa-youtube-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -57,82 +56,60 @@
         </div>
     </header>
     <!-- Header End -->
-
-    <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option spad set-bg"  data-setbg="../static/asset/img/bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>About us</h2>
-                        <div class="breadcrumb__links">
-                            <a href="/">Home</a>
-                            <span>About</span>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="model-card">
+        <div class="conteudo">
+            <div class="caixa">
+                <form action="{{ url_for('logisticpredict')}}" method="post">
+                    <h2 style="color:white;padding-top:70px;">Logistic Regression</h2>
+                    <h5 style="color:white;padding-top:10px;">Heart disease prediction using age and gender</h5>
+                    <div class="inner-card2">
+                        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+                        <div class="mb-3">
+                            <select class="form-control"  name="gender">
+                                <option value="select">Select Gender</option>
+                                <option value="1">Male</option>
+                                <option value="0">Female</option>
+                            </select>
+                            <br>
+                            <input type="type" class="form-control" name="age" placeholder="Enter your age">
                         </div>
+                        <button type="submit" class="primary-btn" style="background-color: black;">submit</button>
                     </div>
-                </div>
+                    <h2 style="color:white;padding-top:70px;"> {{ prediction_text }}</h2>
+                </form>
             </div>
+            <span></span>
+            <span></span>
         </div>
     </div>
-    <!-- Breadcrumb End -->
-
-    <!-- About Section Begin -->
-    <section class="about spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about__pic">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="about__pic__item about__pic__item--large set-bg"
-                                    data-setbg="../static/asset/img/hari.jpg"></div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="about__pic__item set-bg logo-co" data-setbg="../static/asset/img/drc.png"></div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="about__pic__item set-bg logo-co"  data-setbg="../static/asset/img/titans.png"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about__text">
-                        <div class="section-title">
-                            <span>About Me</span>
-                            <h2>Hi folks I am Hari Guptha</h2>
-                        </div>
-                        <div class="about__text__desc">
-                            <p>Hi, I am Hari Guptha  UX/UI designer and Web developer and I am a self-starter with strong interpersonal skills. I work efficiently both as an individual contributor as well as along with a team. I seek new challenges and try to think out of the box while looking for creative solutions to a given problem.</p>
-                        <br>
-                        <p>And I am the owner of DRC studio a website that is based on web development.</p>
-                        </div>
-                        <a href="https://hari.drcstudio.co.in/" class="primary-btn">View portfolio</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-    <!-- About Section End -->
-
-<!-- Footer Section Begin -->
+    <br>
+    <br>
+    <br>
+    <!-- Footer Section Begin -->
     <footer class="footer">
         <div class="container">
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__logo">
-                            <a href="/"><img style="width: 200px;" src="../static/asset/img/logo.png" alt=""></a>
+                            <a href="/"><img style="width: 200px;" src="../static/asset/img/logo.png"
+                                    alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__social">
                             <a href="https://www.instagram.com/drc._.studio/"><i class="fa fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/channel/UCgE56VEv1HGUboWFp-Rta0A"><i class="fa fa-youtube-play"></i></a>
+                            <a href="https://www.youtube.com/channel/UCgE56VEv1HGUboWFp-Rta0A"><i
+                                    class="fa fa-youtube-play"></i></a>
                         </div>
                     </div>
                 </div>
