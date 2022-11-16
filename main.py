@@ -18,6 +18,10 @@ def model():
 def about():
     return render_template('about.html')
 
+@app.route("/svm")
+def svm():
+    return render_template('svm.html')
+
 @app.route("/linear-reg")
 def lr():
     return render_template('linear-reg.html')
@@ -49,6 +53,18 @@ def logisticpredict():
     else:
         return render_template('logistic-reg.html', prediction_text='You don\'t have heart disease')
 
+@app.route('/svm-class',methods=['POST'])
+def svmpredict():
+    
+    model = pickle.load(open('./models/svm.pkl', 'rb'))
+    int_features = [float(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
+    output = round(prediction[0], 2)
+    if output==1:
+        return render_template('svm.html', prediction_text='Your are eligible for our credit card ')
+    else:
+        return render_template('svm.html', prediction_text='Sorry your are not eligible for our credit card')
 
 if __name__  == "__main__":
     app.run(debug=True)
